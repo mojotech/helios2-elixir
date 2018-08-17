@@ -18,6 +18,13 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
 
+# Configure Darksky def
+config :darkskyx, api_key: System.get_env("DARKSKY_API_KEY"),
+  defaults: [
+    units: "us",
+    lang: "en"
+  ]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

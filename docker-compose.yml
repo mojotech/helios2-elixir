@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - .:/app
+    command: sleep infinity
+    ports:
+      - 4002:4000
